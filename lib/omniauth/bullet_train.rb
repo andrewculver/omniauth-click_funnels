@@ -13,17 +13,18 @@ module OmniAuth
         :authorize_url => "/oauth/authorize"
       }
 
-      uid { raw_info["id"] }
+      uid {
+        raw_info["id"]
+      }
 
       info do
         {
           :email => raw_info["email"]
-          # and anything else you want to return to your API consumers
         }
       end
 
       def raw_info
-        @raw_info ||= access_token.get('/api/v1/me.json').parsed
+        @raw_info ||= JSON.parse(access_token.get('/api/v1/me.json').body)
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
