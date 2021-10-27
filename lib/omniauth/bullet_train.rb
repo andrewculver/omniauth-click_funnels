@@ -14,13 +14,24 @@ module OmniAuth
       }
 
       uid {
-        raw_info["id"]
+        raw_info.dig('data', 'id')
       }
 
       info do
         {
-          :email => raw_info["email"]
-        }
+          # TODO I'm curious how many OAuth providers do this. Seems like most do. Is it part of the protocol?
+          email: raw_info.dig("data", "attributes", "email")
+        }.merge(raw_info)
+      end
+
+      def authorize_params
+        super.tap do |params|
+          %w[new_installation].each do |v|
+            if request.params[v]
+              params[v.to_sym] = request.params[v]
+            end
+          end
+        end
       end
 
       def raw_info
