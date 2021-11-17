@@ -16,7 +16,7 @@ module OmniAuth
 
       option :client_options, {
         site: (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
-        authorize_url: "/oauth/authorize",
+        authorize_url: "/oauth/authorize"
       }.merge(additional_options)
 
       uid {
