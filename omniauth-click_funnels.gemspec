@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ["Andrew Culver"]
   spec.email = ["andrew.culver@gmail.com"]
 
-  spec.summary = "OmniAuth strategy for Click Funnels"
+  spec.summary = "OmniAuth strategy for ClickFunnels"
   spec.homepage = "https://github.com/andrewculver/omniauth-click_funnels"
   spec.description = spec.homepage
   spec.license = "MIT"
