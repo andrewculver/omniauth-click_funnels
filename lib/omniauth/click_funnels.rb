@@ -9,7 +9,7 @@ module OmniAuth
       option :name, :click_funnels
 
       option :client_options, {
-        :site => "http://localhost:3000",
+        :site => (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
         :authorize_url => "/oauth/authorize"
       }
 
