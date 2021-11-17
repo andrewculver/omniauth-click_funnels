@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "click_funnels/version"
-require 'omniauth-oauth2'
+require "omniauth-oauth2"
 
 module OmniAuth
   module Strategies
@@ -9,12 +9,12 @@ module OmniAuth
       option :name, :click_funnels
 
       option :client_options, {
-        :site => (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
-        :authorize_url => "/oauth/authorize"
+        site: (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
+        authorize_url: "/oauth/authorize"
       }
 
       uid {
-        raw_info.dig('data', 'id')
+        raw_info.dig("data", "id")
       }
 
       info do
@@ -35,7 +35,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= JSON.parse(access_token.get('/api/v1/me.json').body)
+        @raw_info ||= JSON.parse(access_token.get("/api/v1/me.json").body)
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
