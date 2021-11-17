@@ -8,10 +8,16 @@ module OmniAuth
     class ClickFunnels < OmniAuth::Strategies::OAuth2
       option :name, :click_funnels
 
+      additional_options = if ENV["CLICK_FUNNELS_OAUTH_ROOT"] && Rails.env.development?
+        {ssl: {verify: false}}
+      else
+        {}
+      end
+
       option :client_options, {
         site: (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
-        authorize_url: "/oauth/authorize"
-      }
+        authorize_url: "/oauth/authorize",
+      }.merge(additional_options)
 
       uid {
         raw_info.dig("data", "id")
