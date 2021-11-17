@@ -7,8 +7,6 @@ module OmniAuth
   module Strategies
     class ClickFunnels < OmniAuth::Strategies::OAuth2
       option :name, :click_funnels
-      
-      binding.pry
 
       option :client_options, {
         site: (ENV["CLICK_FUNNELS_OAUTH_ROOT"] || "https://accounts.myclickfunnels.com"),
