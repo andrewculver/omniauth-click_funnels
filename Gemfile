@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in omniauth-bullet_train.gemspec
+# Specify your gem's dependencies in omniauth-click_funnels.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

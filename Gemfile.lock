@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-bullet_train (0.1.0)
+    omniauth-click_funnels (0.1.0)
       omniauth-oauth2 (~> 1.7.0)
 
 GEM
@@ -84,7 +84,7 @@ PLATFORMS
 
 DEPENDENCIES
   minitest (~> 5.0)
-  omniauth-bullet_train!
+  omniauth-click_funnels!
   rake (~> 13.0)
   standardrb
 

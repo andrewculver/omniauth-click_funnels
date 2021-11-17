@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require_relative "lib/omniauth/bullet_train/version"
+require_relative "lib/omniauth/click_funnels/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "omniauth-bullet_train"
-  spec.version = Omniauth::BulletTrain::VERSION
+  spec.name = "omniauth-click_funnels"
+  spec.version = Omniauth::ClickFunnels::VERSION
   spec.authors = ["Andrew Culver"]
   spec.email = ["andrew.culver@gmail.com"]
 
-  spec.summary = "OmniAuth strategy for Bullet Train"
-  spec.homepage = "https://github.com/bullet-train-co/omniauth-bullet_train"
+  spec.summary = "OmniAuth strategy for Click Funnels"
+  spec.homepage = "https://github.com/andrewculver/omniauth-click_funnels"
   spec.description = spec.homepage
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")

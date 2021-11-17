@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
-require_relative "bullet_train/version"
+require_relative "click_funnels/version"
 require 'omniauth-oauth2'
 
 module OmniAuth
   module Strategies
-    class BulletTrain < OmniAuth::Strategies::OAuth2
-      option :name, :bullet_train
+    class ClickFunnels < OmniAuth::Strategies::OAuth2
+      option :name, :click_funnels
 
       option :client_options, {
         :site => "http://localhost:3000",

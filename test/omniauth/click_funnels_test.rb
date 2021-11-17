@@ -2,9 +2,9 @@
 
 require "test_helper"
 
-class Omniauth::BulletTrainTest < Minitest::Test
+class Omniauth::ClickFunnelsTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::Omniauth::BulletTrain::VERSION
+    refute_nil ::Omniauth::ClickFunnels::VERSION
   end
 
   def test_it_does_something_useful
