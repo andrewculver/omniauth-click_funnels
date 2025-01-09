@@ -41,7 +41,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= JSON.parse(access_token.get("/api/v1/me.json").body)
+        @raw_info ||= JSON.parse(access_token.get("/api/v2/me").body)
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
