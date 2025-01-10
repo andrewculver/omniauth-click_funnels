@@ -20,13 +20,13 @@ module OmniAuth
       }.merge(additional_options)
 
       uid {
-        raw_info.dig("data", "id")
+        raw_info.dig("id")
       }
 
       info do
         {
           # TODO I'm curious how many OAuth providers do this. Seems like most do. Is it part of the protocol?
-          email: raw_info.dig("data", "attributes", "email")
+          email: raw_info.dig("email")
         }.merge(raw_info)
       end
 
@@ -41,7 +41,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= JSON.parse(access_token.get("/api/v1/me.json").body)
+        @raw_info ||= JSON.parse(access_token.get("/api/v2/me").body)
       end
 
       # https://github.com/intridea/omniauth-oauth2/issues/81
